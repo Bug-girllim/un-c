@@ -9,12 +9,30 @@ public class Application {
         do {
             System.out.println("===== 대학생활 계산기 =====");
             // (1) 각자 자기 메뉴 한 줄 추가
+            System.out.println("2. 학점 계산");
             System.out.println("0. 종료");
             System.out.print("메뉴 선택 : ");
             menu = sc.nextInt();
 
             switch (menu) {
                 // (2) 각자 자기 case 블록 추가
+
+                case 2: {
+                    System.out.print("과목 1 점수 : ");
+                    int score1 = sc.nextInt();
+                    System.out.print("과목 2 점수 : ");
+                    int score2 = sc.nextInt();
+                    System.out.print("과목 3 점수 : ");
+                    int score3 = sc.nextInt();
+
+                    GradeService gradeService = new GradeService();
+                    String report = gradeService.makeReport(score1, score2, score3);
+                    System.out.println(report);
+                    System.out.println();
+                    break;
+                }
+
+
                 case 0:
                     System.out.println("계산기를 종료합니다.");
                     break;
