@@ -8,13 +8,28 @@ public class Application {
         int menu;
         do {
             System.out.println("===== 대학생활 계산기 =====");
-            // (1) 각자 자기 메뉴 한 줄 추가
+            System.out.println("1. 알바 급여");
             System.out.println("0. 종료");
             System.out.print("메뉴 선택 : ");
             menu = sc.nextInt();
 
             switch (menu) {
-                // (2) 각자 자기 case 블록 추가
+
+                case 1: {
+                    System.out.print("시급: ");
+                    int wage = sc.nextInt();
+                    System.out.print("이번 주 근무 시간 : ");
+                    int hours = sc.nextInt();
+
+                    WageService wageService = new WageService();
+
+                    String result = wageService.nowpay(wage, hours);
+
+                    System.out.println(result);
+
+                    break;
+                }
+
                 case 0:
                     System.out.println("계산기를 종료합니다.");
                     break;
