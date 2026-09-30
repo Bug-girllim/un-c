@@ -3,6 +3,7 @@ package com.team1.campus;
 public class WageService {
 
     public int weekpay(int hours) {
+        // (hours >40) ? 40 : hours;
         if (hours > 40) {
             hours = 40;
             return hours;
