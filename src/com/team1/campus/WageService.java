@@ -26,7 +26,10 @@ public class WageService {
             return "기본급 " + pay + "원 (주 15시간 미만이라 주휴수당 없음)" ;
         }
 
-        int weekpay = wageCalculator.weekpay(wage, hours);
+        int h = weekpay(hours);
+
+        int weekpay = wageCalculator.weekpay(wage, h
+        );
 
         return "기본급 " + pay
                 + "원 + 주휴수당 " + weekpay
